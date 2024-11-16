@@ -331,6 +331,84 @@ This utility provides a reliable and reusable method for extracting game command
 
 ## How to run this code?
 ### 
+[![How to run this code?](https://youtu.be/KmKBzQJIhqQ)
+
+## **Instructions for Running the Test**
+
+Below are detailed instructions on how to use `Test_running-0.0_Test_executor.py` to run tests and switch between different games.
+
+---
+
+### **Step 1: Open the Test File**
+1. Locate the `Test_running-0.0_Test_executor.py` file in your project directory.
+2. Confirm that the file exists and is accessible, or right-click the file to find its relative path.
+
+---
+
+### **Step 2: Navigate to the File Directory**
+1. Open a terminal.
+2. Enter the following command to navigate to the directory containing the test file:
+   ```bash
+   cd <test_running_file_relative_path>
+   ```
+   Replace `<test_running_file_relative_path>` with the relative path of `Test_running-0.0_Test_executor.py`.
+
+---
+
+### **Step 3: Run the Test File**
+1. To execute the test file and launch a specific game, use the following command:
+   ```bash
+   python 0.0_Test_executor.py balance-scale-heaviest
+   ```
+   - `balance-scale-heaviest` is the name of the game. You can replace it with the name of another game to run a different one.
+   - Example game names can be found in the `../playthroughs` folder, such as:
+     - `bath-tub-water-temperature`
+     - `cube-weight-guess`
+
+2. Press **Enter**, and the game will start. The program will load the corresponding command file and execute the game logic.
+
+---
+
+### **Step 4: Switch Between Games**
+1. To run another game, repeat Step 3 and replace the game name with a new one. For example:
+   ```bash
+   python 0.0_Test_executor.py bath-tub-water-temperature
+   ```
+
+2. Each time you run a new game, the program will load the respective commands and simulate the game process.
+
+---
+
+### **Usage Example**
+
+Here is an example of running multiple games:
+
+1. Navigate to the test file directory:
+   ```bash
+   cd /path/to/test/running/directory
+   ```
+
+2. Run the first game (e.g., `balance-scale-heaviest`):
+   ```bash
+   python 0.0_Test_executor.py balance-scale-heaviest
+   ```
+
+3. Switch and run the next game (e.g., `bath-tub-water-temperature`):
+   ```bash
+   python 0.0_Test_executor.py bath-tub-water-temperature
+   ```
+
+---
+
+### **Important Notes**
+1. Ensure Python is installed on your system and the `python` command works in your terminal.
+2. Verify that the `Test_running-0.0_Test_executor.py` file path is correct and that all dependent command files exist in the `../playthroughs` directory.
+3. To avoid path errors, consider right-clicking and copying the relative path to the file.
+4. The game name must match the command file name in the `playthroughs` folder; otherwise, the program will fail to load the game.
+
+---
+
+By following these steps, you can efficiently run specific games and switch between different test games to validate the logic or enjoy the game content!
 
 
 
