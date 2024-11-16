@@ -134,37 +134,37 @@ Key Features:
 Dynamic property management, e.g., isMoveable (movable), temperature (temperature), etc.
 Container relationship management, supporting object addition, removal, and recursive traversal.
 Provides a mapping between object names and references, facilitating player interactions.
-2. Container (Container)
+#### 2. Container (Container)
 Description:
 Inherits from GameObject and represents objects that can contain other items (e.g., drawers, boxes, tables).
 Key Features:
 Supports container opening and closing operations.
 Implements logic for storing and retrieving items, including validating the target container's availability and state.
-3. Device (Device)
+#### 3. Device (Device)
 Description:
 Inherits from GameObject and represents devices that can be activated or deactivated (e.g., lights, fans).
 Key Features:
 Provides operations for turning devices on (turnOn) and off (turnOff).
 Supports an interface for interacting with other objects.
-4. Substance (Substance)
+#### 4. Substance (Substance)
 Description:
 Defines substances with physical properties (e.g., melting point, boiling point) and dynamically adjusts their states (solid, liquid, or gas) based on temperature.
 Key Features:
 Automatically switches the substance's physical state based on its temperature.
 Provides descriptive information about the current state.
-5. World (World)
+#### 5. World (World)
 Description:
 Inherits from Container and represents the game scene or environment, serving as the root container for all game objects.
 Key Features:
 Manages all objects within the scene and their states.
 Generates natural language descriptions of the current scene.
-6. Agent (Agent)
+#### 6. Agent (Agent)
 Description:
 Represents the player’s in-game proxy, responsible for managing the player’s items (e.g., inventory).
 Key Features:
 Implements logic for managing player items.
 Provides readable descriptions of player items.
-7. TextGame (Text Game Logic)
+#### 7. TextGame (Text Game Logic)
 Description:
 Provides a general game logic framework, including world initialization, action registration, score calculation, and player interaction.
 Key Features:
