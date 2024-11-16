@@ -331,7 +331,7 @@ This utility provides a reliable and reusable method for extracting game command
 
 ## How to run this code?
 ## Demo Video
-[![How to run this code?](https://img.youtube.com/vi/KmKBzQJIhqQ/0.jpg)](https://youtu.be/KmKBzQJIhqQ)
+[![How to run this code?](https://img.youtu.be/MHR61h1qEzs/0.jpg)](https://youtu.be/MHR61h1qEzs)
 
 
 ## **Instructions for Running the Test**
