@@ -124,6 +124,24 @@ Benefits:
 Standardized game execution. Simplified testing across multiple games.
 
 ---
+
+### **Overall Impact**
+
+| **Aspect**            | **Before Refactoring**                           | **After Refactoring**                            | **Improvement**                                                          |
+|------------------------|-------------------------------------------------|-------------------------------------------------|--------------------------------------------------------------------------|
+| **Modularity**         | Monolithic scripts with duplicated logic        | Shared modules with reusable components         | Easier to manage, reuse, and extend functionalities.                     |
+| **Readability**        | Verbose and repetitive logic                    | Streamlined with comprehensions and mappings    | Improved clarity and reduced cognitive load for developers.              |
+| **Extensibility**      | Hard to add new features or games               | Game-specific logic isolated in subclasses      | New games or features require minimal effort to implement.               |
+| **Performance**        | Explicit loops and redundant operations         | Optimized recursive calls and calculations      | Improved efficiency for recursive and state-dependent operations.        |
+| **Action Handling**    | Repetitive `if-elif` structures                 | Dynamic action mapping                          | Reduced boilerplate and easier action management.                        |
+| **Testing and Execution**| Separate, inconsistent main loops              | Unified main execution function                 | Standardized testing and execution across all games.                     |
+The refactoring effort successfully optimized the framework for 32 similar games by focusing on modularity, reusability, and maintainability. Key achievements include:
+- A **reusable core library** that supports future game development.
+- Simplified and extensible game-specific implementations.
+- Improved performance and developer experience.
+
+This approach significantly reduces technical debt, making the codebase more adaptable for evolving project needs. The same framework can now efficiently support additional games with minimal effort, ensuring scalability and consistency across the board.
+---
 ## Intro to main code
 ### 1.library-GameBasic.py
 This code is a general-purpose text-based game engine framework designed to provide a foundation for creating text adventure games. Using abstract classes and object-oriented programming, the framework modularly implements game objects' fundamental behaviors and logic (e.g., items, containers, devices). Developers can extend the framework to build specific game scenarios and logic.
