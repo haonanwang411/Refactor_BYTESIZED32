@@ -140,7 +140,6 @@ The refactoring effort successfully optimized the framework for 32 similar games
 - A **reusable core library** that supports future game development.
 - Simplified and extensible game-specific implementations.
 - Improved performance and developer experience.
-
 This approach significantly reduces technical debt, making the codebase more adaptable for evolving project needs. The same framework can now efficiently support additional games with minimal effort, ensuring scalability and consistency across the board.
 ---
 ## Intro to main code
@@ -191,7 +190,88 @@ Defines abstract methods like initializeWorld() and getTaskDescription() for spe
 Supports parsing and executing player actions, such as picking up and placing items.
 Manages game states, including game over and victory conditions.
 
+### 2. Test_running-0.0_Test_executor.py
 
+This code serves as a universal command executor designed to run specified game scripts via the command line and execute corresponding game commands. It loads commands from predefined text files, passes them to the game script, and simulates player input. This simplifies testing processes and is suitable for batch execution and debugging of text-based adventure games.
+
+---
+
+### Code Structure and Functionality
+
+#### 1. `get_commands` Function
+- **Purpose**: 
+  - Loads commands from a specified file path.
+- **Explanation**: 
+  - Reads a command file located in the `playthroughs` directory (e.g., `bath-tub-water-temperature-playthrough.txt`) using the `get_commands` function from the `command_runner` module and returns a list of commands.
+
+---
+
+#### 2. `execute_commands` Function
+- **Purpose**: 
+  - Combines a list of commands into a single string and executes them using `subprocess`.
+- **Explanation**: 
+  - Runs the specified game script (e.g., `bath-tub-water-temperature.py`) with the combined commands passed as arguments via `subprocess.run`.
+
+---
+
+#### 3. Command-Line Argument Parsing
+- **Uses `argparse` to parse command-line arguments**:
+  - `game_name`: Specifies the name of the game script to be executed (e.g., `bath-tub-water-temperature`).
+  - Automatically locates the corresponding command file (`../playthroughs/{game_name}-playthrough.txt`) and loads the commands.
+
+---
+
+### Execution Flow
+
+#### Input
+- The user specifies the name of the game script via the command line.
+
+#### Processing
+1. The code locates the command file corresponding to the specified game.
+2. It loads the commands from the file using `get_commands`.
+3. It invokes `execute_commands` to combine and execute the commands via `subprocess`.
+
+#### Output
+- Displays the executed commands.
+- Runs the specified game script, simulating player interactions.
+
+---
+
+### Usage Example
+
+- **Assuming the game script is `bath-tub-water-temperature.py` and the corresponding command file is `bath-tub-water-temperature-playthrough.txt`**:
+  - **Command**:
+    ```bash
+    python 0.0_Test_executor.py bath-tub-water-temperature
+    ```
+  - **Execution**:
+    1. Loads commands from `../playthroughs/bath-tub-water-temperature-playthrough.txt`.
+    2. Executes `bath-tub-water-temperature.py` with the loaded commands.
+
+---
+
+### Code Logic Summary
+
+#### 1. Modular Design
+- The `get_commands` function abstracts command-loading logic, enhancing reusability.
+- The `execute_commands` function encapsulates execution logic, improving code readability and maintainability.
+
+---
+
+#### 2. Flexibility and Extensibility
+- Command-line argument parsing supports testing and running different game scripts.
+- Automatically maps game scripts to their corresponding command files, reducing manual effort.
+
+---
+
+#### 3. Ease of Debugging
+- Prints detailed information about executed commands for easier debugging.
+- Uses `subprocess.run` to ensure safe and reliable command execution.
+
+---
+
+#### 4. Adaptability
+- Supports cross-platform execution as long as the Python environment and file paths are correctly configured.
 
 
 
