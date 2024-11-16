@@ -129,8 +129,8 @@ Standardized game execution. Simplified testing across multiple games.
 This code is a general-purpose text-based game engine framework designed to provide a foundation for creating text adventure games. Using abstract classes and object-oriented programming, the framework modularly implements game objects' fundamental behaviors and logic (e.g., items, containers, devices). Developers can extend the framework to build specific game scenarios and logic.
 Modules and Functionalities
 #### 1. GameObject (Base Game Object)
-Description: GameObject is the abstract base class for all game objects, defining fundamental attributes and operational logic such as container relationships, movability, and recursive object management.
-Key Features:
+**Description**: GameObject is the abstract base class for all game objects, defining fundamental attributes and operational logic such as container relationships, movability, and recursive object management.\\
+**Key Features:**
 Dynamic property management, e.g., isMoveable (movable), temperature (temperature), etc.
 Container relationship management, supporting object addition, removal, and recursive traversal.
 Provides a mapping between object names and references, facilitating player interactions.
