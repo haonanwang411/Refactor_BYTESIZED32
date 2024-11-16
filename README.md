@@ -196,48 +196,44 @@ This code serves as a universal command executor designed to run specified game 
 
 ---
 
-### Code Structure and Functionality
+#### Code Structure and Functionality
 
-#### 1. `get_commands` Function
+##### 1. `get_commands` Function
 - **Purpose**: 
   - Loads commands from a specified file path.
 - **Explanation**: 
   - Reads a command file located in the `playthroughs` directory (e.g., `bath-tub-water-temperature-playthrough.txt`) using the `get_commands` function from the `command_runner` module and returns a list of commands.
 
----
 
-#### 2. `execute_commands` Function
+##### 2. `execute_commands` Function
 - **Purpose**: 
   - Combines a list of commands into a single string and executes them using `subprocess`.
 - **Explanation**: 
   - Runs the specified game script (e.g., `bath-tub-water-temperature.py`) with the combined commands passed as arguments via `subprocess.run`.
 
----
 
-#### 3. Command-Line Argument Parsing
+##### 3. Command-Line Argument Parsing
 - **Uses `argparse` to parse command-line arguments**:
   - `game_name`: Specifies the name of the game script to be executed (e.g., `bath-tub-water-temperature`).
   - Automatically locates the corresponding command file (`../playthroughs/{game_name}-playthrough.txt`) and loads the commands.
 
----
 
-### Execution Flow
+#### Execution Flow
 
-#### Input
+##### Input
 - The user specifies the name of the game script via the command line.
 
-#### Processing
+##### Processing
 1. The code locates the command file corresponding to the specified game.
 2. It loads the commands from the file using `get_commands`.
 3. It invokes `execute_commands` to combine and execute the commands via `subprocess`.
 
-#### Output
+##### Output
 - Displays the executed commands.
 - Runs the specified game script, simulating player interactions.
 
----
 
-### Usage Example
+#### Usage Example
 
 - **Assuming the game script is `bath-tub-water-temperature.py` and the corresponding command file is `bath-tub-water-temperature-playthrough.txt`**:
   - **Command**:
@@ -250,28 +246,88 @@ This code serves as a universal command executor designed to run specified game 
 
 ---
 
-### Code Logic Summary
+#### Code Logic Summary
 
-#### 1. Modular Design
+##### 1. Modular Design
 - The `get_commands` function abstracts command-loading logic, enhancing reusability.
 - The `execute_commands` function encapsulates execution logic, improving code readability and maintainability.
 
 ---
 
-#### 2. Flexibility and Extensibility
+##### 2. Flexibility and Extensibility
 - Command-line argument parsing supports testing and running different game scripts.
 - Automatically maps game scripts to their corresponding command files, reducing manual effort.
 
 ---
 
-#### 3. Ease of Debugging
+##### 3. Ease of Debugging
 - Prints detailed information about executed commands for easier debugging.
 - Uses `subprocess.run` to ensure safe and reliable command execution.
 
 ---
 
-#### 4. Adaptability
+##### 4. Adaptability
 - Supports cross-platform execution as long as the Python environment and file paths are correctly configured.
+### 3.Test_running-command_runner.py
+The main function of this code is to extract valid game commands from a specified `playthrough` file and return them as a list. By parsing the file content, it filters out commands that start with `>` and prepares them for batch testing or game debugging.
+
+---
+
+#### Code Structure and Functionality
+
+1. **`get_commands` Function**  
+   - **Purpose**:  
+     Load commands from a specified file path and filter valid command lines.
+   - **Logic**:  
+     - Opens the file at the specified path and reads it line by line.
+     - Extracts lines starting with `>`, removing the `>` symbol and surrounding whitespace.
+     - Stores the filtered commands in a list and returns them.
+
+   **Example Input File**:
+   ```text
+   > take apple
+   > put apple in basket
+   look around
+   ```
+   **Output**:
+   ```python
+   ["take apple", "put apple in basket"]
+   ```
+
+2. **Command-Line Execution**  
+   - **Purpose**:  
+     Allows specifying the file path from the command line to load commands.
+   - **Logic**:  
+     - Uses `argparse` to accept the `file_path` parameter from the command line.
+     - Calls the `get_commands` function to read commands from the specified file path.
+     - Prints the loaded commands (for debugging purposes).
+
+3. **Usage**  
+   Run the following command to load a command file:  
+   ```bash
+   python command_runner.py ../playthroughs/bath-tub-water-temperature-playthrough.txt
+   ```
+   **Example Output**:  
+   ```
+   Loaded commands: ['take apple', 'put apple in basket']
+   ```
+
+---
+
+#### Code Logic Summary
+
+1. **Simplicity and Efficiency**  
+   - Encapsulates the command extraction logic into a single function for reusability.
+   - Filters valid commands to ensure correct input format.
+
+2. **High Extensibility**  
+   - Can be used for different game test scripts by specifying various command file paths.
+   - The `get_commands` function can be integrated into more complex execution frameworks.
+
+3. **Debugging-Friendly**  
+   - Prints the loaded commands to verify the correctness of the command extraction process.
+
+This utility provides a reliable and reusable method for extracting game commands, simplifying the workflow for text-based game testing and debugging.
 
 
 
