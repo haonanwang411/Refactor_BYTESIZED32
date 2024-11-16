@@ -329,6 +329,8 @@ The main function of this code is to extract valid game commands from a specifie
 
 This utility provides a reliable and reusable method for extracting game commands, simplifying the workflow for text-based game testing and debugging.
 
+## How to run this code?
+### 
 
 
 
