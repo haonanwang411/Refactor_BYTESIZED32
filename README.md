@@ -135,39 +135,39 @@ Dynamic property management, e.g., isMoveable (movable), temperature (temperatur
 Container relationship management, supporting object addition, removal, and recursive traversal.
 Provides a mapping between object names and references, facilitating player interactions.
 #### 2. Container (Container)
-Description:
+- **Description:**
 Inherits from GameObject and represents objects that can contain other items (e.g., drawers, boxes, tables).
-Key Features:
+- **Key Features:**
 Supports container opening and closing operations.
 Implements logic for storing and retrieving items, including validating the target container's availability and state.
 #### 3. Device (Device)
-Description:
+- **Description:**
 Inherits from GameObject and represents devices that can be activated or deactivated (e.g., lights, fans).
-Key Features:
+- **Key Features:**
 Provides operations for turning devices on (turnOn) and off (turnOff).
 Supports an interface for interacting with other objects.
 #### 4. Substance (Substance)
-Description:
+- **Description:**
 Defines substances with physical properties (e.g., melting point, boiling point) and dynamically adjusts their states (solid, liquid, or gas) based on temperature.
-Key Features:
+- **Key Features:**
 Automatically switches the substance's physical state based on its temperature.
 Provides descriptive information about the current state.
 #### 5. World (World)
-Description:
+- **Description:**
 Inherits from Container and represents the game scene or environment, serving as the root container for all game objects.
-Key Features:
+- **Key Features:**
 Manages all objects within the scene and their states.
 Generates natural language descriptions of the current scene.
 #### 6. Agent (Agent)
-Description:
+- **Description:**
 Represents the player’s in-game proxy, responsible for managing the player’s items (e.g., inventory).
-Key Features:
+- **Key Features:**
 Implements logic for managing player items.
 Provides readable descriptions of player items.
 #### 7. TextGame (Text Game Logic)
-Description:
+- **Description:**
 Provides a general game logic framework, including world initialization, action registration, score calculation, and player interaction.
-Key Features:
+- **Key Features:**
 Defines abstract methods like initializeWorld() and getTaskDescription() for specific game logic implementation.
 Supports parsing and executing player actions, such as picking up and placing items.
 Manages game states, including game over and victory conditions.
