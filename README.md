@@ -135,6 +135,7 @@ Standardized game execution. Simplified testing across multiple games.
 | **Performance**        | Explicit loops and redundant operations         | Optimized recursive calls and calculations      | Improved efficiency for recursive and state-dependent operations.        |
 | **Action Handling**    | Repetitive `if-elif` structures                 | Dynamic action mapping                          | Reduced boilerplate and easier action management.                        |
 | **Testing and Execution**| Separate, inconsistent main loops              | Unified main execution function                 | Standardized testing and execution across all games.                     |
+
 The refactoring effort successfully optimized the framework for 32 similar games by focusing on modularity, reusability, and maintainability. Key achievements include:
 - A **reusable core library** that supports future game development.
 - Simplified and extensible game-specific implementations.
