@@ -2,7 +2,7 @@
 # Success Haonan Wang and Ziang Xiao(Oct 2024)2
 
 # Changed the main function, easy to test, he is not the final code, is different.
-# 改了main函数，方便测试，他不是最终的代码，
+# 
 from GameBasic import *
 
 class BalanceScale(GameObject):
